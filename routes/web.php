@@ -17,7 +17,9 @@ Route::get('/', function () {
 Route::get('/forgot', function () {
     return view('login/forgot_password');
 });
-
 Auth::routes();
-
+//metode get 
 Route::get('/home', 'HomeController@index')->name('home');
+//metode controllers
+Route::resource('users', 'UsersController');
+//Route::get('users/update','UsersController@update');

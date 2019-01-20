@@ -6,7 +6,7 @@
 
     <div class="form-group m-b-20 {{ $errors->has('name') ? ' has-error' : '' }}">
         <div class="col-xs-12">
-            <label for="emailaddress">Name</label>
+            <label for="name">Name</label>
             <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}" placeholder="john">
             @if ($errors->has('name'))
                 <span class="help-block">

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,6 +31,11 @@
         <link href="{{asset('plugins/datatables/dataTables.colVis.css')}}" rel="stylesheet" type="text/css"/>
         <link href="{{asset('plugins/datatables/dataTables.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
         <link href="{{asset('plugins/datatables/fixedColumns.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
+        <script src="{{asset('plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
+        <script src="{{asset('pages/jquery.sweet-alert.init.js')}}"></script>
+        
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
          <style type="text/css">
             .error{
                 color: red;
@@ -50,6 +57,32 @@
 
 
     <body>
+        @include('sweet::alert')
+        @if(session('sukses'))
+            <script>
+                  swal({
+                      title: "Sukses!",
+                      text: '{{session('pesan')}}',
+                      timer: 3000,
+                      showConfirmButton: false,
+                      type: 'success'
+                  });
+              </script>
+        @endif
+
+         @if(session('gagal'))
+            <script>
+              swal({
+                  title: "gagal!",
+                  text: '{{session('gagal')}}',
+                  timer: 3000,
+                  showConfirmButton: false,
+                  type: 'warning'
+              });
+          </script>  
+        @endif      
+
+       
 
         <div id="page-wrapper">
 
@@ -141,18 +174,43 @@
                             <!-- Left Menu Start -->
                             <ul class="metisMenu nav" id="side-menu">
                                 <li><a href="#"><i class="ti-home"></i> Dashboard </a></li>
-
-                             
-
+                                @if(Auth::user()->level == 1)
                                 <li>
                                     <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-users"></i> Users <span class="fa arrow"></span></a>
                                     <ul class="nav-second-level nav" aria-expanded="true">
                                         <li><a href="#">Group Users</a></li>
-                                        <li><a href="#">Users</a></li>
-                                        <li><a href="#">Icons</a></li>
-                                        <li><a href="#">Widgets</a></li>
+                                        <li><a href="{{ route('users.index')}}">Users</a></li>
                                     </ul>
                                 </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-gear"></i> ACL <span class="fa arrow"></span></a>
+                                    <ul class="nav-second-level nav" aria-expanded="true">
+                                        <li><a href="#">Group Menu</a></li>
+                                        <li><a href="#">Sub Menu</a></li>
+                                    </ul>
+                                </li>
+
+                                 <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-gears"></i> Utility <span class="fa arrow"></span></a>
+                                    <ul class="nav-second-level nav" aria-expanded="true">
+                                        <li><a href="#">Cetak PDF</a></li>
+                                        <li><a href="#">Cetak Excel</a></li>
+                                        <li><a href="#">QR Code</a></li>
+                                        <li><a href="#">Import Excel</a></li>
+                                        <li><a href="#">Upload Document</a></li>
+                                    </ul>
+                                </li>
+                                @else
+                                <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-users"></i> Level 2 <span class="fa arrow"></span></a>
+                                   
+                                </li>
+                                @endif
+
+                             
+
+                               
 
     
                             </ul>
@@ -166,8 +224,6 @@
 
                     <div class="container">
                         @yield('content')
-                        
-
                     </div>
                     <!-- end container -->
 
@@ -210,6 +266,8 @@
         <script src="{{asset('pages/jquery.datatables.init.js')}}"></script>
 
         <script src="{{asset('js/jquery.app.js')}}"></script>
+        <script src="{{asset('plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
+        <script src="{{asset('pages/jquery.sweet-alert.init.js')}}"></script>
 
     </body>
 </html>
