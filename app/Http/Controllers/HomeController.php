@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Groupmenu;
+use App\Models\Submenu;
 use Alert;
+use DB;
 
 class HomeController extends Controller
 {
@@ -23,8 +26,7 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        
+    {       
         return view('home');
     }
 }

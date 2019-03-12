@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 //load model
-use App\Users;
-use App\Level_users;
+use App\Models\Users;
+use App\Models\Level_users;
 use Alert;
 
 
@@ -23,6 +23,10 @@ class UsersController extends Controller
         //pagination and order by
         //$user      =Users::orderBy('id', 'DESC')->paginate(5);
         return view('users/index', compact('user'));
+
+        //json
+         
+         //return response()->json(['data'=>$user]);
     }
 
   

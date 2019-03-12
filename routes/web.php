@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('login/form_login');
 });
 Route::get('/forgot', function () {
@@ -22,4 +22,20 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //metode controllers
 Route::resource('users', 'UsersController');
+Route::resource('users', 'UsersController');
+Route::resource('pendaftaran', 'Pendaftaran');
 //Route::get('users/update','UsersController@update');
+
+Route::resource('level_users', 'LevelusersController');
+Route::resource('groupmenu', 'GroupmenuController');
+Route::resource('submenu', 'SubmenuController');
+
+// home page
+Route::get('/', 'HomePageController@index')->name('home_page');
+Route::get('/tentang-kami', 'HomePageController@about_us')->name('tentang-kami');
+Route::get('/produk', 'HomePageController@produk')->name('produk');
+Route::get('/pelatihan', 'HomePageController@pelatihan')->name('pelatihan');
+Route::get('/detial-pelatihan', 'HomePageController@detial_pelatihan')->name('detial-pelatihan');
+Route::get('/daftar', 'HomePageController@daftar')->name('daftar');
+
+

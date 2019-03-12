@@ -19,7 +19,7 @@
                     <th>IP Address</th>
                     <th>Phone</th>
                     <th>Active</th>
-                    <th>Aksi</th>
+                    <th style="width: 50px;">Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,5 +56,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection
