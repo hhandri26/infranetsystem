@@ -21,9 +21,9 @@ Auth::routes();
 //metode get 
 Route::get('/home', 'HomeController@index')->name('home');
 //metode controllers
-Route::resource('users', 'UsersController');
-Route::resource('users', 'UsersController');
-Route::resource('pendaftaran', 'Pendaftaran');
+Route::resource('/users', 'UsersController');
+Route::resource('/users', 'UsersController');
+Route::resource('/pendaftaran', 'Pendaftaran');
 //Route::get('users/update','UsersController@update');
 
 Route::resource('level_users', 'LevelusersController');

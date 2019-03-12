@@ -29,29 +29,29 @@ if ($akses ==1) {
     <title>Dashboard -> Framework handri User: {{ Auth::user()->name }} </title>
 
     <!-- Bootstrap -->
-    <link href="{{asset('gantela/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/gantela/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="{{asset('gantela/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/gantela/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- NProgress -->
-    <link href="{{asset('gantela/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
+    <link href="{{asset('public/gantela/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
     <!-- iCheck -->
-   <link href="{{asset('gantela/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
+   <link href="{{asset('public/gantela/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="{{asset('gantela/build/css/custom.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/gantela/build/css/custom.min.css')}}" rel="stylesheet">
     <!-- cos -->
-    <link href="{{asset('css/icons.css')}}" rel="stylesheet">
-    <script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
-    <link href="{{asset('plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('plugins/datatables/buttons.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('plugins/datatables/responsive.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('plugins/datatables/scroller.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('plugins/datatables/dataTables.colVis.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('plugins/datatables/dataTables.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('plugins/datatables/fixedColumns.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
-    <script src="{{asset('plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
-    <script src="{{asset('pages/jquery.sweet-alert.init.js')}}"></script>
+    <link href="{{asset('public/css/icons.css')}}" rel="stylesheet">
+    <script src="{{asset('public/js/jquery-2.1.4.min.js')}}"></script>
+    <link href="{{asset('public/plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('public/plugins/datatables/buttons.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('public/plugins/datatables/responsive.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('public/plugins/datatables/scroller.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('public/plugins/datatables/dataTables.colVis.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('public/plugins/datatables/dataTables.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('public/plugins/datatables/fixedColumns.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('public/plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
+    <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
     <style type="text/css">
             .error{
                 color: red;
@@ -104,8 +104,8 @@ if ($akses ==1) {
             <div class="navbar nav_title" style="border: 0;">
               <div class="width-logo">
                         <a href="{{url('home')}}" class="logo">
-                            <img src="{{asset('img/logo-pt.jpg')}}" alt="logo" class="logo-lg" style="height: 55px" />
-                            <img src="{{asset('img/logo-pt.jpg')}}" alt="logo" class="logo-sm hidden" />
+                            <img src="{{asset('public/img/logo-pt.jpg')}}" alt="logo" class="logo-lg" style="height: 55px" />
+                            <img src="{{asset('public/img/logo-pt.jpg')}}" alt="logo" class="logo-sm hidden" />
                         </a>
                     </div>
             </div>
@@ -115,7 +115,7 @@ if ($akses ==1) {
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="{{asset('img/users/default.png')}}" alt="..." class="img-circle profile_img">
+                <img src="{{asset('public/img/users/default.png')}}" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>{{ Auth::user()->name }}</span>
@@ -205,7 +205,7 @@ if ($akses ==1) {
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{asset('img/users/default.png')}}" alt="">{{ Auth::user()->name }}
+                    <img src="{{asset('public/img/users/default.png')}}" alt="">{{ Auth::user()->name }}
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -253,22 +253,22 @@ if ($akses ==1) {
 
     
     <!-- Bootstrap -->
-    <script src="{{asset('gantela/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('public/gantela/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <!-- FastClick -->
-    <script src="{{asset('gantela/vendors/fastclick/lib/fastclick.js')}}"></script>
+    <script src="{{asset('public/gantela/vendors/fastclick/lib/fastclick.js')}}"></script>
     <!-- NProgress -->
-    <script src="{{asset('gantela/vendors/nprogress/nprogress.js')}}"></script>
+    <script src="{{asset('public/gantela/vendors/nprogress/nprogress.js')}}"></script>
     <!-- iCheck -->
-    <script src="{{asset('gantela/vendors/iCheck/icheck.min.js')}}"></script>
+    <script src="{{asset('public/gantela/vendors/iCheck/icheck.min.js')}}"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="{{asset('gantela/build/js/custom.min.js')}}"></script>
-    <script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('plugins/datatables/dataTables.bootstrap.js')}}"></script>
-    <script src="{{asset('pages/jquery.datatables.init.js')}}"></script>
+    <script src="{{asset('public/gantela/build/js/custom.min.js')}}"></script>
+    <script src="{{asset('public/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('public/plugins/datatables/dataTables.bootstrap.js')}}"></script>
+    <script src="{{asset('public/pages/jquery.datatables.init.js')}}"></script>
 
-    <script src="{{asset('js/jquery.app.js')}}"></script>
-    <script src="{{asset('plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
-    <script src="{{asset('pages/jquery.sweet-alert.init.js')}}"></script>
+    <script src="{{asset('public/js/jquery.app.js')}}"></script>
+    <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
   </body>
 </html>

@@ -17,36 +17,37 @@
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
         <link rel="apple-touch-icon-precomposed" href="#">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
 
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900' rel='stylesheet' type='text/css'>
         <!-- Material Icons CSS -->
-        <link href="{{asset('materialize/fonts/iconfont/material-icons.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/fonts/iconfont/material-icons.css')}}" rel="stylesheet">
         <!-- FontAwesome CSS -->
-        <link href="{{asset('materialize/fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
         <!-- owl.carousel -->
-        <link href="{{asset('materialize/owl.carousel/assets/owl.carousel.css')}}" rel="stylesheet">
-        <link href="{{asset('materialize/owl.carousel/assets/owl.theme.default.min.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/owl.carousel/assets/owl.carousel.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/owl.carousel/assets/owl.theme.default.min.css')}}" rel="stylesheet">
         <!-- magnific-popup -->
-        <link href="{{asset('materialize/magnific-popup/magnific-popup.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/magnific-popup/magnific-popup.css')}}" rel="stylesheet">
         <!-- materialize -->
-        <link href="{{asset('materialize/materialize/css/materialize.min.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/materialize/css/materialize.min.css')}}" rel="stylesheet">
         <!-- Bootstrap -->
-        <link href="{{asset('materialize/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
         <!-- shortcodes -->
-        <link href="{{asset('materialize/css/shortcodes/shortcodes.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/css/shortcodes/shortcodes.css')}}" rel="stylesheet">
         <!-- Main Style CSS -->
-        <link href="{{asset('materialize/style.css')}}" rel="stylesheet">
-        <link href="{{asset('materialize/css/skins/seo.css')}}" rel="stylesheet">
-        <link href="{{asset('materialize/css/animate.min.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/style.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/css/skins/seo.css')}}" rel="stylesheet">
+        <link href="{{asset('public/materialize/css/animate.min.css')}}" rel="stylesheet">
 
         <!-- RS5.0 Main Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="{{asset('materialize/revolution/css/settings.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('public/materialize/revolution/css/settings.css')}}">
         <!-- RS5.0 Layers and Navigation Styles -->
-        <link rel="stylesheet" type="text/css" href="{{asset('materialize/revolution/css/layers.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('materialize/revolution/css/navigation.css')}}">
-        <link href="{{asset('plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
-        <script src="{{asset('plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
-        <script src="{{asset('pages/jquery.sweet-alert.init.js')}}"></script>
+        <link rel="stylesheet" type="text/css" href="{{asset('public/materialize/revolution/css/layers.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('public/materialize/revolution/css/navigation.css')}}">
+        <link href="{{asset('public/plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
+        <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
+        <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
     </head>
 
     <body id="top" class="has-header-search">
@@ -116,7 +117,7 @@
 
                         <!--logo start-->
                         <a href="index.html" class="logo-brand">
-                            <img src="{{asset('img/logo-pt.jpg')}}" alt="" >
+                            <img src="{{asset('public/img/logo-pt.jpg')}}" alt="" >
                         </a>
                         <!--logo end-->
 
@@ -167,7 +168,7 @@
                   <div class="row">
                     <div class="col-md-12">
                           <div class="footer-logo">
-                            <img src="{{asset('img/logo-pt.jpg')}}" alt="">
+                            <img src="{{asset('public/img/logo-pt.jpg')}}" alt="">
                           </div>
 
                           <span class="copy-text">Copyright &copy; 2016 <a href="#">Materialize</a> &nbsp; | &nbsp;  All Rights Reserved &nbsp; | &nbsp;  Designed By <a href="#">TrendyTheme</a></span>
@@ -196,7 +197,7 @@
         <!-- Preloader -->
         <div id="preloader">
           <div class="preloader-position"> 
-            <img src="{{asset('img/loading2.gif')}}" alt="logo" >
+            <img src="{{asset('public/img/loading2.gif')}}" alt="logo" >
             <div class="progress">
               <div class="indeterminate"></div>
             </div>
@@ -206,25 +207,25 @@
 
 
         <!-- jQuery -->
-        <script src="{{asset('materialize/js/jquery-2.1.3.min.js')}}"></script>
-        <script src="{{asset('materialize/bootstrap/js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('materialize/js/materialize.min.js')}}"></script>
-        <script src="{{asset('materialize/js/jquery.easing.min.js')}}"></script>
-        <script src="{{asset('materialize/js/smoothscroll.min.js')}}"></script>
-        <script src="{{asset('materialize/js/menuzord.js')}}"></script>
-        <script src="{{asset('materialize/js/bootstrap-tabcollapse.min.js')}}"></script>
-        <script src="{{asset('materialize/js/jquery.inview.min.js')}}"></script>
-        <script src="{{asset('materialize/js/jquery.countTo.min.js')}}"></script>
-        <script src="{{asset('materialize/js/imagesloaded.js')}}"></script>
-        <script src="{{asset('materialize/js/jquery.shuffle.min.js')}}"></script>
-        <script src="{{asset('materialize/js/jquery.stellar.min.js')}}"></script>
-        <script src="{{asset('materialize/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
-        <script src="{{asset('materialize/owl.carousel/owl.carousel.min.js')}}"></script>
-        <script src="{{asset('materialize/js/scripts.js')}}"></script>
+        <script src="{{asset('public/materialize/js/jquery-2.1.3.min.js')}}"></script>
+        <script src="{{asset('public/materialize/bootstrap/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('public/materialize/js/materialize.min.js')}}"></script>
+        <script src="{{asset('public/materialize/js/jquery.easing.min.js')}}"></script>
+        <script src="{{asset('public/materialize/js/smoothscroll.min.js')}}"></script>
+        <script src="{{asset('public/materialize/js/menuzord.js')}}"></script>
+        <script src="{{asset('public/materialize/js/bootstrap-tabcollapse.min.js')}}"></script>
+        <script src="{{asset('public/materialize/js/jquery.inview.min.js')}}"></script>
+        <script src="{{asset('public/materialize/js/jquery.countTo.min.js')}}"></script>
+        <script src="{{asset('public/materialize/js/imagesloaded.js')}}"></script>
+        <script src="{{asset('public/materialize/js/jquery.shuffle.min.js')}}"></script>
+        <script src="{{asset('public/materialize/js/jquery.stellar.min.js')}}"></script>
+        <script src="{{asset('public/materialize/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+        <script src="{{asset('public/materialize/owl.carousel/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('public/materialize/js/scripts.js')}}"></script>
 
         <!-- RS5.0 Core JS Files -->
-        <script src="{{asset('materialize/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
-        <script src="{{asset('materialize/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
+        <script src="{{asset('public/materialize/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
+        <script src="{{asset('public/materialize/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
 
         <!-- global js -->
         
@@ -233,18 +234,18 @@
 
         <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems! The following part can be removed on Server for On Demand Loading) -->
          
-        <script type="text/javascript" src="{{asset('materialize/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('materialize/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('materialize/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('materialize/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('materialize/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('materialize/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('materialize/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('materialize/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
-        <script src="{{asset('pages/jquery.sweet-alert.init.js')}}"></script>
-        <script src="{{asset('materialize/js/wow.min.js')}}"></script>
-        <script src="{{asset('js/global.js')}}"></script>
-        <link href="{{asset('materialize/css/shortcodes/login.css')}}" rel="stylesheet">
+        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+        <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
+        <script src="{{asset('public/materialize/js/wow.min.js')}}"></script>
+        <script src="{{asset('public/js/global.js')}}"></script>
+        <link href="{{asset('public/materialize/css/shortcodes/login.css')}}" rel="stylesheet">
         
 
     </body>

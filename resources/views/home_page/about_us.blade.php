@@ -33,7 +33,7 @@
           <div class="gallery-thumb">
             <ul class="slides">
               <li data-thumb="{{asset('img/logo-pt.jpg')}}">
-                <img src="{{asset('img/company.jpg')}}" alt="image">
+                <img src="{{asset('public/img/company.jpg')}}" alt="image">
               </li>
             </ul>
           </div><!-- /.gallery-thumb -->

@@ -5,10 +5,10 @@
       <ul>
 
         <!-- slide 1 start --> 
-        <li data-transition="fade" data-slotamount="default" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="{{asset('img/slider-bg-1.jpg')}}"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="materialize Material" data-description="">
+        <li data-transition="fade" data-slotamount="default" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="{{asset('public/img/slider-bg-1.jpg')}}"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="materialize Material" data-description="">
 
             <!-- MAIN IMAGE -->
-            <img src="{{asset('img/slider-bg-1.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+            <img src="{{asset('public/img/slider-bg-1.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 
 
             <!-- LAYER NR. 1 -->
@@ -87,7 +87,7 @@
       <div class="seo-featured-carousel brand-dot">
           <div class="featured-item seo-service">
               <div class="icon">
-                  <img class="img-responsive" src="{{asset('img/service-1.jpg')}}" alt="">
+                  <img class="img-responsive" src="{{asset('public/img/service-1.jpg')}}" alt="">
               </div>
               <div class="desc">
                   <h2>Web Optimize</h2>
@@ -100,7 +100,7 @@
 
           <div class="featured-item seo-service">
               <div class="icon">
-                  <img class="img-responsive" src="{{asset('img/service-2.jpg')}}" alt="">
+                  <img class="img-responsive" src="{{asset('public/img/service-2.jpg')}}" alt="">
               </div>
               <div class="desc">
                   <h2>Data Analysis</h2>
@@ -113,7 +113,7 @@
 
           <div class="featured-item seo-service">
               <div class="icon">
-                  <img class="img-responsive" src="{{asset('img/service-3.jpg')}}" alt="">
+                  <img class="img-responsive" src="{{asset('public/img/service-3.jpg')}}" alt="">
               </div>
               <div class="desc">
                   <h2>Concept Development</h2>
@@ -126,7 +126,7 @@
 
           <div class="featured-item seo-service">
               <div class="icon">
-                  <img class="img-responsive" src="{{asset('img/service-4.jpg')}}" alt="">
+                  <img class="img-responsive" src="{{asset('public/img/service-4.jpg')}}" alt="">
               </div>
               <div class="desc">
                   <h2>Content Marketing</h2>
@@ -139,7 +139,7 @@
 
           <div class="featured-item seo-service">
               <div class="icon">
-                  <img class="img-responsive" src="{{asset('img/service-5.jpg')}}" alt="">
+                  <img class="img-responsive" src="{{asset('public/img/service-5.jpg')}}" alt="">
               </div>
               <div class="desc">
                   <h2>Big Data</h2>
@@ -152,7 +152,7 @@
 
           <div class="featured-item seo-service">
               <div class="icon">
-                  <img class="img-responsive" src="{{asset('img/service-6.jpg')}}" alt="">
+                  <img class="img-responsive" src="{{asset('public/img/service-6.jpg')}}" alt="">
               </div>
               <div class="desc">
                   <h2>Mobile Marketing</h2>
@@ -165,7 +165,7 @@
 
           <div class="featured-item seo-service">
               <div class="icon">
-                  <img class="img-responsive" src="{{asset('img/service-7.jpg')}}" alt="">
+                  <img class="img-responsive" src="{{asset('public/img/service-7.jpg')}}" alt="">
               </div>
               <div class="desc">
                   <h2>Data Organize</h2>
@@ -178,7 +178,7 @@
 
           <div class="featured-item seo-service">
               <div class="icon">
-                  <img class="img-responsive" src="{{asset('img/service-8.jpg')}}" alt="">
+                  <img class="img-responsive" src="{{asset('public/img/service-8.jpg')}}" alt="">
               </div>
               <div class="desc">
                   <h2>Pay Per Click</h2>
@@ -210,7 +210,7 @@
         </div><!-- /.col-md-7 -->
 
         <div class="col-md-5 mt-sm-30">
-			         <img src="{{asset('img/seo-info-light.png')}}" alt="" class="img-responsive">
+			         <img src="{{asset('public/img/seo-info-light.png')}}" alt="" class="img-responsive">
         </div><!-- /.col-md-5 -->
       </div><!-- /.row -->
     </div><!-- /.container -->
@@ -338,7 +338,7 @@
                   <div class="thumb">
                       <div class="bg-overlay"></div>
 
-                      <img src="{{asset('img/portofolio/indokom.jpg')}}" alt="">
+                      <img src="{{asset('public/img/portofolio/indokom.jpg')}}" alt="">
 
                       <div class="portfolio-intro">
                         <div class="action-btn">

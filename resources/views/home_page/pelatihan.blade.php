@@ -37,7 +37,7 @@
 					<div class="portfolio-wrapper">
 					<div class="thumb">
 						<div class="bg-overlay brand-overlay"></div>
-						<img src="{{asset('img/icon-kursus/php.png')}}" alt="">
+						<img src="{{asset('public/img/icon-kursus/php.png')}}" alt="">
 
 						<div class="portfolio-intro">
 							<div class="action-btn">
