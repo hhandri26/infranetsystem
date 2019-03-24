@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Users;
 
-class Pendaftaran extends Controller
+class PendaftaranController extends Controller
 {
     public function index()
     {
-    	$provinsi      =DB::table('provinsi')->get();
+    	//$provinsi      =DB::table('provinsi')->get();
 
     	//return $provinsi;
-        return view('pendaftaran/index', compact('provinsi'));
+        return view('pendaftaran/index');
     }
 
     public function store(Request $request)

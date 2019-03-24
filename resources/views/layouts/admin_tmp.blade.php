@@ -1,22 +1,15 @@
 <?php
 
+$user_id = Auth::user()->id;
 
-$akses      = auth()->user()->level;
-if ($akses ==1) {
-  $menu       = DB::table('t_group_menu as a')
-              ->select('a.id','a.nama as menu','a.level','a.icon')
-              ->get();
-
-}else{
-    $menu    = DB::table('t_group_menu as a')
-              ->select('a.id','a.nama as menu','a.level','a.icon')
-              ->where('a.level',$akses)
-              ->get();
-}
-
-
+if ($user_id==1){      
+      $sql2="a.id>0";
+    }else{
+      $sql2="a.user_id=".$user_id;
+    }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,7 +19,7 @@ if ($akses ==1) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dashboard -> Framework handri User: {{ Auth::user()->name }} </title>
+    <title>Dashboard -> User: {{ Auth::user()->name }} </title>
 
     <!-- Bootstrap -->
     <link href="{{asset('public/gantela/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -52,6 +45,7 @@ if ($akses ==1) {
     <link href="{{asset('public/plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
     <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
     <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('public/plugins/select2/css/select2.min.css')}}">
     <style type="text/css">
             .error{
                 color: red;
@@ -131,60 +125,17 @@ if ($akses ==1) {
               <div class="menu_section">
                 
                 <ul class="nav side-menu">
-                  @if(Auth::user()->level == 1)
-                    <li>
-                      <a>
-                        <i class="fa fa-users"></i> Users <span class="fa fa-chevron-down"></span>
-                      </a>
-                        <ul class="nav child_menu">
-                          <li><a href="{{route('level_users.index')}}">Group Users</a></li>
-                          <li><a href="{{ route('users.index')}}">Users</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a><i class="fa fa-gear"></i> ACL <span class="fa fa-chevron-down"></span></a>
+                 @foreach(App\Models\MenuModels::select('a.user_id','a.menu_id','b.menu_name as menu','b.icon as icon','b.id as id_menu')->leftjoin('t_menu as b','a.menu_id','=','b.id')->whereRaw($sql2)->get() as $row)
+                    <li><a><i class="{{$row->icon}}"></i>{{$row->menu}} <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                        <li><a href="#">Controllers</a></li>
-                        <li><a href="#">Method</a></li>
-                        <li><a href="{{route('groupmenu.index')}}">Group Menu</a></li>
-                        <li><a href="{{route('submenu.index')}}">Sub Menu</a></li>
+                         @foreach(App\Models\SubMenuModels::select('a.id_menu','a.sub_menu_name','a.url')->where('a.id_menu',$row->menu_id)->get() as $row2)
+                        <li><a href="{{route($row2->url)}}">{{$row2->sub_menu_name}}</a></li>
+                        @endforeach
                       </ul>
                     </li>
-
-                     <li><a><i class="fa fa-file-pdf-o"></i> Utility <span class="fa fa-chevron-down"></span></a>
-                      <ul class="nav child_menu">
-                        <li><a href="#">Cetak PDF</a></li>
-                        <li><a href="#">Cetak Excel</a></li>
-                        <li><a href="#">QR Code</a></li>
-                        <li><a href="#">Import Excel</a></li>
-                        <li><a href="#">Upload Document</a></li>
-                      </ul>
-                    </li>
-                  @endif
-
-                    <!--  -->
-                    @foreach($menu as $row)
-                    <li><a><i class="fa {{$row->icon}}"></i> {{$row->menu}} <span class="fa fa-chevron-down"></span></a>
-                      <ul class="nav child_menu">
-                        <?php 
-                           $submenu= DB::table('t_sub_menu')
-                                    ->select('*')
-                                    ->where('groupmenu_id',$row->id)
-                                    ->get();
-                        ?>
-                          @foreach($submenu as $row2)
-                            <li><a href="#">{{$row2->nama_sub}}</a></li>
-                          @endforeach
-                      </ul>
-                    </li>
-                    @endforeach                           
-                 
+                    @endforeach
                 </ul>
-
-
               </div>
-              
-
             </div>
             <!-- /sidebar menu -->
 
@@ -270,5 +221,9 @@ if ($akses ==1) {
     <script src="{{asset('public/js/jquery.app.js')}}"></script>
     <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
     <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
+    <script src="{{asset('public/plugins/select2/js/select2.min.js')}}"></script>
+    <script type="text/javascript">
+    $(".select2").select2();
+    </script>
   </body>
 </html>

@@ -116,13 +116,13 @@
                     <div id="materialize-menu" class="menuzord">
 
                         <!--logo start-->
-                        <a href="index.html" class="logo-brand">
+                        <a href="#" class="logo-brand">
                             <img src="{{asset('public/img/logo-pt.jpg')}}" alt="" >
                         </a>
                         <!--logo end-->
 
                         <!-- menu start-->
-                        <div id="menu">
+                        
                             <ul class="menuzord-menu pull-right">
                                 <li class="active"><a href="{{route('home_page')}}">Home</a></li>
                                 <li><a href="{{route('tentang-kami')}}">Tentang Kami</a></li>
@@ -130,11 +130,9 @@
                                 <li><a href="{{route('pelatihan')}}">Pelatihan</a></li>
                                 <li><a href="#">Artikel</a></li>
                                 <li><a href="#">Hubungi kami</a></li>
-                                <li><a href="{{route('login')}}">Login</a></li>
-                                
-
+                                <li><a href="{{route('login')}}">Login</a></li>                           
                             </ul>
-                        </div>
+                        
                         <!-- menu end-->
 
                     </div>

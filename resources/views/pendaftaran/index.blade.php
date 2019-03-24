@@ -8,30 +8,30 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
+        <link rel="shortcut icon" href="{{asset('public/images/favicon.ico')}}">
 
         <!--Morris Chart CSS -->
-        <link rel="stylesheet" href="{{asset('plugins/morris/morris.css')}}">
+        <link rel="stylesheet" href="{{asset('public/plugins/morris/morris.css')}}">
 
         <!-- Bootstrap core CSS -->
-        <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
         <!-- MetisMenu CSS -->
-        <link href="{{asset('css/metisMenu.min.css')}}" rel="stylesheet">
+        <link href="{{asset('public/css/metisMenu.min.css')}}" rel="stylesheet">
         <!-- Icons CSS -->
-        <link href="{{asset('css/icons.css')}}" rel="stylesheet">
+        <link href="{{asset('public/css/icons.css')}}" rel="stylesheet">
         <!-- Custom styles for this template -->
-        <script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
-        <link href="{{asset('css/style.css')}}" rel="stylesheet">
-        <link href="{{asset('plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
-        <link href="{{asset('plugins/datatables/buttons.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-        <link href="{{asset('plugins/datatables/responsive.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-        <link href="{{asset('plugins/datatables/scroller.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-        <link href="{{asset('plugins/datatables/dataTables.colVis.css')}}" rel="stylesheet" type="text/css"/>
+        <script src="{{asset('public/js/jquery-2.1.4.min.js')}}"></script>
+        <link href="{{asset('public/css/style.css')}}" rel="stylesheet">
+        <link href="{{asset('public/plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('public/plugins/datatables/buttons.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('public/plugins/datatables/responsive.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('public/plugins/datatables/scroller.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('public/plugins/datatables/dataTables.colVis.css')}}" rel="stylesheet" type="text/css"/>
         <link href="{{asset('plugins/datatables/dataTables.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-        <link href="{{asset('plugins/datatables/fixedColumns.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
-        <link href="{{asset('plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
-        <script src="{{asset('plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
-        <script src="{{asset('pages/jquery.sweet-alert.init.js')}}"></script>
+        <link href="{{asset('public/plugins/datatables/fixedColumns.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('public/plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
+        <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
+        <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <style type="text/css">
             .box{
@@ -93,9 +93,7 @@
                                        
                                         <select name="prov" id="prov" class="form-control">
                                             <option>- Pilih Provinsi -</option>
-                                            @foreach ($provinsi as $row)
-                                                <option value="{{$row->id_prov}}">{{$row->nama}}</option>
-                                            @endforeach
+                                          
                                         </select>
                                     </div>
                                 </div>
@@ -220,26 +218,26 @@
             });
 
         </script>
-        <script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('js/metisMenu.min.js')}}"></script>
-        <script src="{{asset('js/jquery.slimscroll.min.js')}}"></script>
+        <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('public/js/metisMenu.min.js')}}"></script>
+        <script src="{{asset('public/js/jquery.slimscroll.min.js')}}"></script>
 
         <!--Morris Chart-->
-        <script src="{{asset('plugins/morris/morris.min.js')}}"></script>
-        <script src="{{asset('plugins/raphael/raphael-min.js')}}"></script>
+        <script src="{{asset('public/plugins/morris/morris.min.js')}}"></script>
+        <script src="{{asset('public/plugins/raphael/raphael-min.js')}}"></script>
 
         <!-- Dashboard init -->
-        <script src="{{asset('pages/jquery.dashboard.js')}}"></script>
+        <script src="{{asset('public/pages/jquery.dashboard.js')}}"></script>
 
         <!-- App Js -->
         
-        <script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
-        <script src="{{asset('plugins/datatables/dataTables.bootstrap.js')}}"></script>
-        <script src="{{asset('pages/jquery.datatables.init.js')}}"></script>
+        <script src="{{asset('public/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+        <script src="{{asset('public/plugins/datatables/dataTables.bootstrap.js')}}"></script>
+        <script src="{{asset('public/pages/jquery.datatables.init.js')}}"></script>
 
-        <script src="{{asset('js/jquery.app.js')}}"></script>
-        <script src="{{asset('plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
-        <script src="{{asset('pages/jquery.sweet-alert.init.js')}}"></script>
+        <script src="{{asset('public/js/jquery.app.js')}}"></script>
+        <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
+        <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
 
     </body>
 </html>
