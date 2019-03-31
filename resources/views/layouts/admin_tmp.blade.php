@@ -32,6 +32,9 @@ if ($user_id==1){
 
     <!-- Custom Theme Style -->
     <link href="{{asset('public/gantela/build/css/custom.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/fab/css/jquery-fab-button.min.css')}}" rel="stylesheet">
+    <script src="{{asset('public/fab/js/jquery-fab-button.min.js')}}"></script>
+    <script src="{{asset('public/costum/global.css')}}"></script>
     <!-- cos -->
     <link href="{{asset('public/css/icons.css')}}" rel="stylesheet">
     <script src="{{asset('public/js/jquery-2.1.4.min.js')}}"></script>
@@ -67,30 +70,6 @@ if ($user_id==1){
   </head>
 
   <body class="nav-md">
-    @include('sweet::alert')
-        @if(session('sukses'))
-            <script>
-                  swal({
-                      title: "Sukses!",
-                      text: '{{session('pesan')}}',
-                      timer: 3000,
-                      showConfirmButton: false,
-                      type: 'success'
-                  });
-              </script>
-        @endif
-
-         @if(session('gagal'))
-            <script>
-              swal({
-                  title: "gagal!",
-                  text: '{{session('gagal')}}',
-                  timer: 3000,
-                  showConfirmButton: false,
-                  type: 'warning'
-              });
-          </script>  
-        @endif      
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -125,7 +104,7 @@ if ($user_id==1){
               <div class="menu_section">
                 
                 <ul class="nav side-menu">
-                 @foreach(App\Models\MenuModels::select('a.user_id','a.menu_id','b.menu_name as menu','b.icon as icon','b.id as id_menu')->leftjoin('t_menu as b','a.menu_id','=','b.id')->whereRaw($sql2)->get() as $row)
+                 @foreach(App\Models\MenuModels::select('a.user_id','a.menu_id','b.menu_name as menu','b.icon as icon','b.id as id_menu')->leftjoin('t_menu as b','a.menu_id','=','b.id')->whereRaw($sql2)->orderby('b.sort','ASC')->get() as $row)
                     <li><a><i class="{{$row->icon}}"></i>{{$row->menu}} <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
                          @foreach(App\Models\SubMenuModels::select('a.id_menu','a.sub_menu_name','a.url')->where('a.id_menu',$row->menu_id)->get() as $row2)
@@ -220,8 +199,10 @@ if ($user_id==1){
 
     <script src="{{asset('public/js/jquery.app.js')}}"></script>
     <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
-    <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
+    
     <script src="{{asset('public/plugins/select2/js/select2.min.js')}}"></script>
+    <script src="{{asset('public/costum/alert.js')}}"></script>
+    <script src="{{asset('public/costum/globalscript.js')}}"></script>
     <script type="text/javascript">
     $(".select2").select2();
     </script>

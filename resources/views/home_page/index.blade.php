@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Kursus IT Programing BSD | Infranetsystem | Jasa Pembuatan Website dan mobile Apps BSD Tangerang selatan">
-        <meta name="keywords" content="Kursus IT Programing BSD | Infranetsystem | Jasa Pembuatan Website dan mobile Apps BSD Tangerang selatan">
+        <meta name="description" content="{{$info['decription']}}">
+        <meta name="keywords" content="{{$info['keywords']}}">
         <meta name="author" content="https:infranetsystem.com">
+        <meta name="tag" content="{{$info['tag']}}">
 
-        <title>Kursus IT Programing BSD | Infranetsystem | Jasa Pembuatan Website dan mobile Apps BSD Tangerang selatan</title>
+        <title>{{$info['title']}}</title>
 
         <!--  favicon -->
         <link rel="shortcut icon" href="assets/img/ico/favicon.png">
@@ -84,20 +85,19 @@
               <div class="col-md-6">
                 <!-- Social Icon -->
                 <ul class="list-inline social-top tt-animate btt">
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>                 
-                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>                  
-                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="{{$info['facebook']}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="{{$info['twitter']}}" target="_blank"><i class="fa fa-twitter"></i></a></li>                 
+                  <li><a href="{{$info['instagram']}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
               </div>
 
               <div class="col-md-6 text-right">
                 <ul class="topbar-cta no-margin">
                   <li class="mr-20">
-                    <a><i class="material-icons mr-10">&#xE0B9;</i>info@infranetsystem.com</a>
+                    <a><i class="material-icons mr-10">&#xE0B9;</i>{{$info['email']}}</a>
                   </li>
                   <li>
-                    <a><i class="material-icons mr-10">&#xE0CD;</i>+62818 0878 4785</a>
+                    <a><i class="material-icons mr-10">&#xE0CD;</i>{{$info['phone']}}</a>
                   </li>
                 </ul>
               </div>
@@ -117,7 +117,7 @@
 
                         <!--logo start-->
                         <a href="#" class="logo-brand">
-                            <img src="{{asset('public/img/logo-pt.jpg')}}" alt="" >
+                            <img src="{{asset('public/img/'.$info['logo'])}}" alt="" >
                         </a>
                         <!--logo end-->
 
@@ -128,7 +128,7 @@
                                 <li><a href="{{route('tentang-kami')}}">Tentang Kami</a></li>
                                 <li><a href="{{route('produk')}}">Produk</a></li>
                                 <li><a href="{{route('pelatihan')}}">Pelatihan</a></li>
-                                <li><a href="#">Artikel</a></li>
+                                <li><a href="{{route('artikel')}}">Artikel</a></li>
                                 <li><a href="#">Hubungi kami</a></li>
                                 <li><a href="{{route('login')}}">Login</a></li>                           
                             </ul>
@@ -166,12 +166,12 @@
                   <div class="row">
                     <div class="col-md-12">
                           <div class="footer-logo">
-                            <img src="{{asset('public/img/logo-pt.jpg')}}" alt="">
+                            <img src="{{asset('public/img/'.$info['logo'])}}" alt="">
                           </div>
 
-                          <span class="copy-text">Copyright &copy; 2016 <a href="#">Materialize</a> &nbsp; | &nbsp;  All Rights Reserved &nbsp; | &nbsp;  Designed By <a href="#">TrendyTheme</a></span>
+                         
                           <div class="footer-intro">
-                            <p>Penatibus tristique velit vestibulum adipiscing habitant aenean feugiat at condimentum aptent odio orci vulputate hac mollis a.Vestibulum adipiscing gravida justo a ac euismod vitae.</p>
+                            <p>{{$info['copyright']}}</p>
                           </div>
                     </div><!-- /.col-md-12 -->
                   </div><!-- /.row -->

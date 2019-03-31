@@ -3,108 +3,69 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\HomePage;
+Use App\Models\ArticleModels;
 
 class HomePageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    public function __construct()
+    {
+        
+    }
     public function index()
     {
-        return view('home_page.home');
+        $data['info']       = HomePage::tableinfo();
+        $data['slideshow']  = HomePage::slideshow();
+        $data['section1']   = HomePage::section1();
+        return view('home_page.home',$data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
     public function about_us()
     {
-        return view('home_page.about_us');
+        $data['info']       = HomePage::tableinfo();
+        $data['about']      = HomePage::aboutus();
+        return view('home_page.about_us',$data);
     }
 
     public function produk()
     {
-        return view('home_page.produk');
+        $data['info']       = HomePage::tableinfo();
+        $data['prd']        = HomePage::product();
+        return view('home_page.produk',$data);
 
+    }
+
+    public function artikel()
+    {
+        $data['info']       = HomePage::tableinfo();
+        $data['art']        = ArticleModels::orderBy('sort', 'DESC')->where('active','1')->paginate(6);
+        return view('home_page.article',$data);
+    }
+
+    public function article_single($id)
+    {
+        $data['info']       = HomePage::tableinfo();
+        $data['art']        = ArticleModels::find($id);
+        return view('home_page.single_article',$data);
     }
 
     public function pelatihan()
     {
-        return view('home_page.pelatihan');
+        $data['info']       = HomePage::tableinfo();
+        return view('home_page.pelatihan',$data);
     }
 
     public function detial_pelatihan()
     {
-        return view('home_page.detail_pelatihan');
+        $data['info']       = HomePage::tableinfo();
+        return view('home_page.detail_pelatihan',$data);
     }
 
     public function daftar()
     {
-         return view('home_page.form_pendaftaran');
+        $data['info']       = HomePage::tableinfo();
+        return view('home_page.form_pendaftaran',$data);
     }
 }

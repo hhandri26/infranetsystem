@@ -7,6 +7,7 @@ use App\Models\Groupmenu;
 use App\Models\Submenu;
 use Alert;
 use DB;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -29,4 +30,6 @@ class HomeController extends Controller
     {   
         return view('home');
     }
+
+   
 }

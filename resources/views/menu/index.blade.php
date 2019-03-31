@@ -29,12 +29,12 @@
                        <td>{{$row->menu_name}}</td>
                        <td><i class="{{$row->icon}}"></i></td>                       
                        <td style="text-align:right;">
-                            <a href="javascript:edit($row->id)" class="btn btn-info btn-sm" style="float: left;">
+                            <a href="javascript:edit({{$row->id}})" class="btn btn-info btn-sm" style="float: left;">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="javascript:delete($row->id)">
-                              <i class="fa fa-trash"></i>
-                            </button>
+                            <a href="javascript:deleted({{$row->id}})" class="btn btn-info btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </a>
                         </td>
                    </tr>
                    <?php $no++;?>
@@ -47,6 +47,17 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+  function edit(sid){
+    location.href="{{route('menu_edit')}}?id="+sid;
+  }
+</script>
+<script type="text/javascript">
+    function deleted(sid){       
+      var url   = "{{route('delete') }}?id="+sid+"&table=t_menu&refresh=menu_table";
+      AlertCheck('Apakah anda Yakin Menghapus Data Ini?',url);
+  }
+</script>
 
 
 

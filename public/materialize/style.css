@@ -249,7 +249,7 @@ thead {
 }
 .table>tbody>tr>td,
 .table>tbody>tr>th {
-    color: #666;
+    color: #fff;
     padding: 15px 8px;
     border-top: 1px solid #eee;
 }
