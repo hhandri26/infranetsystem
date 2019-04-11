@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ConfigModels;
 use App\Models\MenuModels;
 use App\Models\SubMenuModels;
+use Illuminate\Support\Facades\Validator;
 use DB;
 class ConfigController extends Controller
 {
@@ -13,6 +14,11 @@ class ConfigController extends Controller
 	public function delete()
 	{
 		return ConfigModels::delete_ok();
+	}
+
+	public function upload_file(Request $request)
+	{
+		return ConfigModels::upload_file_ok($request);
 	}
 
 	// menu
@@ -65,5 +71,52 @@ class ConfigController extends Controller
 							 ->select('*')
 							 ->get();
 		return view('sub_menu/form',$data);
+	}
+
+	public function user_list()
+	{
+		return ConfigModels::get_user_prv();
+	}
+
+	public function user_table()
+	{
+		return view('users/table');
+	}
+
+	public function user_form()
+	{
+        return view('users/form');
+	}
+
+	public function select_menu()
+	{
+		return ConfigModels::select_menu_ok();
+	}
+
+	public function user_add()
+	{
+		return ConfigModels::user_add_ok();
+	}
+
+	public function user_edit()
+	{
+		$data['get']      	=ConfigModels::get_user_prv();
+        return view('users/form',$data);
+	}
+
+	public function delete_prv()
+	{
+		return ConfigModels::delete_prv_ok();
+	}
+
+	public function info_form()
+	{
+		$data['get']      	=ConfigModels::get_contact_info();
+        return view('info/form',$data);
+	}
+
+	public function info_update()
+	{
+		return ConfigModels::info_update_ok();
 	}
 }

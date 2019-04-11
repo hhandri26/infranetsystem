@@ -17,4 +17,15 @@ class ArticleController extends Controller
 	{
 		return view('artikel/form');
 	}
+
+	public function artikel_edit()
+	{
+		$data['get'] = ArticleModels::get_article();
+		return view('artikel/form',$data);
+	}
+
+	public function article_add()
+	{
+		return ArticleModels::artikel_save_ok();
+	}
 }

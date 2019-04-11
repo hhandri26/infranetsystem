@@ -3,7 +3,7 @@
 $user_id = Auth::user()->id;
 
 if ($user_id==1){      
-      $sql2="a.id>0";
+      $sql2="a.user_id=".$user_id;
     }else{
       $sql2="a.user_id=".$user_id;
     }
@@ -33,8 +33,10 @@ if ($user_id==1){
     <!-- Custom Theme Style -->
     <link href="{{asset('public/gantela/build/css/custom.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/fab/css/jquery-fab-button.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/plugins/contextmenu/jquery.contextMenu.min.css')}}" rel="stylesheet">
     <script src="{{asset('public/fab/js/jquery-fab-button.min.js')}}"></script>
     <script src="{{asset('public/costum/global.css')}}"></script>
+
     <!-- cos -->
     <link href="{{asset('public/css/icons.css')}}" rel="stylesheet">
     <script src="{{asset('public/js/jquery-2.1.4.min.js')}}"></script>
@@ -48,7 +50,14 @@ if ($user_id==1){
     <link href="{{asset('public/plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
     <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
     <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('public/plugins/select2/css/select2.min.css')}}">
+    <link href="{{asset('public/plugins/summernote/summernote.css')}}" rel="stylesheet" />
+    <script src="{{asset('public/plugins/summernote/summernote.min.js')}}"></script>
+    <script src="{{asset('public/plugins/summernote/summernote.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('public/plugins/select2-3.5.4/select2.min.css')}}">
+    <link rel="stylesheet" href="{{ asset ('public/plugins/select2-3.5.4/select2-bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ asset ('public/plugins/icheck/all.css')}}" />
+    <script src="{{ asset ('public/plugins/icheck/icheck.js')}}"></script>
+    <script src="{{ asset ('public/plugins/icheck/icheck.min.js')}}"></script>
     <style type="text/css">
             .error{
                 color: red;
@@ -77,8 +86,8 @@ if ($user_id==1){
             <div class="navbar nav_title" style="border: 0;">
               <div class="width-logo">
                         <a href="{{url('home')}}" class="logo">
-                            <img src="{{asset('public/img/logo-pt.jpg')}}" alt="logo" class="logo-lg" style="height: 55px" />
-                            <img src="{{asset('public/img/logo-pt.jpg')}}" alt="logo" class="logo-sm hidden" />
+                            <img src="{{asset('/storage/app/file/contact/logo-pt.jpg')}}" alt="logo" class="logo-lg" style="height: 55px" />
+                            <img src="{{asset('/storage/app/file/contact/logo-pt.jpg')}}" alt="logo" class="logo-sm hidden" />
                         </a>
                     </div>
             </div>
@@ -200,9 +209,11 @@ if ($user_id==1){
     <script src="{{asset('public/js/jquery.app.js')}}"></script>
     <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
     
-    <script src="{{asset('public/plugins/select2/js/select2.min.js')}}"></script>
+    <script src="{{asset('public/plugins/select2-3.5.4/select2.min.js')}}"></script>
+    <script src="{{asset('public/plugins/select2-3.5.4/select2_locale_id.js')}}"></script>
     <script src="{{asset('public/costum/alert.js')}}"></script>
     <script src="{{asset('public/costum/globalscript.js')}}"></script>
+    <script src="{{asset('public/plugins/contextmenu/jquery.contextMenu.js')}}"></script>
     <script type="text/javascript">
     $(".select2").select2();
     </script>

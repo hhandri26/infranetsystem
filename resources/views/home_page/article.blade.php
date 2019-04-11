@@ -23,7 +23,7 @@
             <article class="post-wrapper">
 
               <div class="thumb-wrapper">
-                <img src="{{asset('public/img/article/'.$row->img)}}" class="img-responsive" alt="" >
+                <img src="{{asset('/storage/app/file/article/'.$row->img)}}" class="img-responsive" alt="" >
 
                 <div class="entry-header">
                   <span class="posted-in">

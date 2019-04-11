@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label for="sub_menu_name" class="col-sm-6 control-label1">Nama Sub Menu</label>
                                 <div class="col-sm-6">
-                                    <input  type="text" id="sub_menu_name"  class="form-control" value="@if($id>0){{ $get['menu']}} @endif"/>
+                                    <input  type="text" id="sub_menu_name"  class="form-control" value="@if($id>0){{ $get['submenu']}} @endif"/>
                                 </div>
                             </div>
                             

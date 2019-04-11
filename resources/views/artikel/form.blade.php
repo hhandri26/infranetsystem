@@ -16,29 +16,77 @@
         </div>
     </div>
     <div class="box-body">
+        <form id="form1" method="post" action="#" enctype="multipart/form-data" class="form-horizontal">
+            <div class="panel panel-info">
+               <div class="form-group" >
+                   <label for="img" class="col-sm-3 control-label1">Gambar Artikel</label>
+                        <div class="col-sm-9">
+                           <img class="img-thumbnail upload_file" width="200" height="200" id="profile-pre" name="upload_file" src="@if($id>0){{asset('/storage/app/file/article/'.$get['img'])}}@else{{asset('public/img/df.jpg')}}@endif" alt="your image" />
+                           <input type="file" name="upload_file" id="profile-id" >
+                    </div>                        
+                </div>
+            </div>
+        </form>
         <form class="form-horizontal">
             <div class="box-body1">
                 <div class="panel panel-info">
                     <div class="panel-heading1"></div>     
                         <div class="panel-body">
 
-                           
 
                             <div class="form-group">
-                                <label for="sub_menu_name" class="col-sm-6 control-label1">Nama Sub Menu</label>
-                                <div class="col-sm-6">
-                                    <input  type="text" id="sub_menu_name"  class="form-control" value="@if($id>0){{ $get['menu']}} @endif"/>
+                                <label for="title" class="col-sm-3 control-label1">Judul Artikel</label>
+                                <div class="col-sm-9">
+                                    <input  type="text" id="title"  class="form-control" value="@if($id>0){{ $get['title']}} @endif"/>
                                 </div>
-                            </div>
-                            
-                            
+                            </div>                        
 
                             <div class="form-group">
-                                <label for="url" class="col-sm-6 control-label1">Url Routing</label>
-                                <div class="col-sm-6">
-                                    <input type="text" id="url" value="@if($id>0){{ $get['url']}} @endif" id="no_urut" class="form-control"/>
+                                <label for="decription" class="col-sm-3 control-label1">Isi Artikel</label>
+                                <div class="col-sm-9">
+                                     <textarea id="decription" class="form-control">@if($id>0){{$get['decription']}}@endif</textarea>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label for="keywords" class="col-sm-3 control-label1">keywords</label>
+                                <div class="col-sm-9">
+                                     <textarea id="keywords" class="form-control">@if($id>0){{$get['title']}}@endif</textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tag" class="col-sm-3 control-label1">Tag</label>
+                                <div class="col-sm-9">
+                                     <textarea id="tag" class="form-control">@if($id>0){{$get['title']}}@endif</textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="author" class="col-sm-3 control-label1">Penulis</label>
+                                <div class="col-sm-9">
+                                     <input  type="text" id="author"  class="form-control" value="@if($id>0){{ $get['author']}} @endif"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tag" class="col-sm-3 control-label1">Aktif?</label>
+                                
+                                <div class="col-sm-5">
+                                    <input type="radio" class="rcheck"  name="active" id="active" name="active" value="1" @if($id>0 && $get['active']=='1') {{ "checked" }} @endif>Active
+                                    <input type="radio" class="rcheck"  name="active" id="active" name="active" value="2" @if($id>0 && $get['active']=='2') {{ "checked" }} @endif>Tidak Active
+                                </div>
+                                                               
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sort" class="col-sm-3 control-label1">Urutan</label>
+                                <div class="col-sm-9">
+                                    <input  type="text" id="sort"  class="form-control" value="@if($id>0){{ $get['sort']}} @endif"/>
+                                </div>
+                            </div>  
+
+
                         </div>
                 </div>
             </div>
@@ -46,19 +94,59 @@
     </div>
 </div>
 <script type="text/javascript">
+    $('.rcheck').iCheck({
+    checkboxClass: 'icheckbox_flat-green',
+    radioClass: 'iradio_square-green',
+    increaseArea: '20%' // optional
+  });
+    $(document).ready(function() 
+          {
+            $('#decription').summernote({
+               height: 350,            
+                    minHeight: null,        
+                    maxHeight: null,          
+                    focus: false                 
+            });
+          });
+
+    function readURL(input) { 
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#profile-pre').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#profile-id").change(function(){
+        readURL(this);
+    });
+
     function SaveWarning(){
         var id          ="{{$id}}";
         var a           = {};
-        a.id_menu       = $('#id_menu').val();
-        a.sub_menu_name = $('#sub_menu_name').val();
-        a.url           = $('#url').val();
-        var url         = "{{route('sub_menu_add') }}?id="+id+"&data="+'['+JSON.stringify(a)+']';
-        AlertCheck('Apakah anda Yakin Menyimpan Data Ini?',url);
+        a.title         = $('#title').val();
+        a.decription    = $('#decription').val();
+        a.keywords      = $('#keywords').val();
+        a.tag           = $('#tag').val();
+        a.author        = $('#author').val();
+        a.active        = $("input[name='active']:checked").val();
+        a.sort          = $('#sort').val();
+        // config Uoload
+        var folder      = 'article';//folder untuk input gambar
+        var table       = 't_article';//table database
+        var field_name  = 'img';//nama field database yang akan di input
+        var url         = "{{route('article_add') }}?id="+id+"&data="+'['+JSON.stringify(a)+']';//url input data
+        var obj_id      = 'profile-id';//nama id file input gambar/file
+        var refresh     = 'artikel_table';// url untuk reload page setelah input data
+        var url_upload  ="{{route('upload_file') }}?folder="+folder+'&table='+table+'&field_name='+field_name+'&refresh='+refresh;//url upload file
+        AlertUpload('Apakah anda Yakin Menyimpan Data Ini?',url,url_upload,obj_id);
     }
 
     function back()
     {
-        location.href="{{ route('sub_menu_table') }}";
+        location.href="{{ route('artikel_table') }}";
     }
    
 </script>

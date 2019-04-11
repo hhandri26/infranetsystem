@@ -33,7 +33,7 @@
                   </header><!-- /.entry-header-wrapper -->
 
                   <div class="thumb-wrapper">
-                    <img src="{{asset('public/img/article/'.$art->img)}}" class="img-responsive" alt="" >
+                    <img src="{{asset('/storage/app/file/article/'.$art->img)}}" class="img-responsive" alt="" >
                   </div><!-- .post-thumb -->
 
 

@@ -6,10 +6,10 @@
 
         <!-- slide 1 start -->
         @foreach ($slideshow['slider'] as $row )
-        <li data-transition="fade" data-slotamount="default" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="{{asset('public/img/slideshow/'.$row->img)}}"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="materialize Material" data-description="">
+        <li data-transition="fade" data-slotamount="default" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="{{asset('/storage/app/file/slideshow/'.$row->img)}}"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="materialize Material" data-description="">
 
             <!-- MAIN IMAGE -->
-            <img src="{{asset('public/img/slideshow/'.$row->img)}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+            <img src="{{asset('/storage/app/file/slideshow/'.$row->img)}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 
 
             <!-- LAYER NR. 1 -->
@@ -92,7 +92,7 @@
         @foreach ($section1['sect1'] as $row2)
           <div class="featured-item seo-service">
               <div class="icon">
-                  <img class="img-responsive" src="{{asset('public/img/'.$row2->img)}}" alt="">
+                  <img class="img-responsive" src="{{asset('/storage/app/file/service/'.$row2->img)}}" alt="">
               </div>
               <div class="desc">
                   <h2>{{$row2->d_title}}</h2>
@@ -118,7 +118,7 @@
         </div><!-- /.col-md-7 -->
 
         <div class="col-md-5 mt-sm-30">
-			         <img src="{{asset('public/img/'.$row3->img)}}" alt="" class="img-responsive">
+			         <img src="{{asset('/storage/app/file/service/'.$row3->img)}}" alt="" class="img-responsive">
         </div><!-- /.col-md-5 -->
       </div><!-- /.row -->
     </div><!-- /.container -->
@@ -179,7 +179,7 @@
                 <div class="portfolio-wrapper">
                   <div class="thumb">
                       <div class="bg-overlay"></div>
-                      <img src="{{asset('public/img/portofolio/'.$row6->img)}}" alt="">
+                      <img src="{{asset('/storage/app/file/gallery/'.$row6->img)}}" alt="">
                       <div class="portfolio-intro">
                         <div class="action-btn">
                           <a href="#"> <i class="fa fa-link"></i> </a>

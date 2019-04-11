@@ -117,20 +117,34 @@
 
                         <!--logo start-->
                         <a href="#" class="logo-brand">
-                            <img src="{{asset('public/img/'.$info['logo'])}}" alt="" >
+                            <img src="{{asset('/storage/app/file/contact/'.$info['logo'])}}" alt="" >
                         </a>
                         <!--logo end-->
 
                         <!-- menu start-->
                         
                             <ul class="menuzord-menu pull-right">
-                                <li class="active"><a href="{{route('home_page')}}">Home</a></li>
-                                <li><a href="{{route('tentang-kami')}}">Tentang Kami</a></li>
-                                <li><a href="{{route('produk')}}">Produk</a></li>
-                                <li><a href="{{route('pelatihan')}}">Pelatihan</a></li>
-                                <li><a href="{{route('artikel')}}">Artikel</a></li>
-                                <li><a href="#">Hubungi kami</a></li>
-                                <li><a href="{{route('login')}}">Login</a></li>                           
+                                <li class="{{ request()->is('/') ? 'active' : '' }}">
+                                  <a href="{{route('home_page')}}">Home</a>
+                                </li>
+                                <li class="{{ request()->is('tentang-kami') ? 'active' : '' }}">
+                                  <a href="{{route('tentang-kami')}}">Tentang Kami</a>
+                                </li>
+                                <li class="{{ request()->is('produk') ? 'active' : '' }}">
+                                  <a href="{{route('produk')}}">Produk</a>
+                                </li>
+                                <li class="{{ request()->is('pelatihan') ? 'active' : '' }}">
+                                  <a href="{{route('pelatihan')}}">Pelatihan</a>
+                                </li>
+                                <li class="{{ request()->is('artikel') ? 'active' : '' }}">
+                                  <a href="{{route('artikel')}}">Artikel</a>
+                                </li>
+                                <li class="">
+                                  <a href="#">Hubungi kami</a>
+                                </li>
+                                <li class="{{ request()->is('login') ? 'active' : '' }}">
+                                  <a href="{{route('login')}}">Login</a>
+                                </li>                           
                             </ul>
                         
                         <!-- menu end-->
@@ -166,7 +180,7 @@
                   <div class="row">
                     <div class="col-md-12">
                           <div class="footer-logo">
-                            <img src="{{asset('public/img/'.$info['logo'])}}" alt="">
+                            <img src="{{asset('/storage/app/file/contact/'.$info['logo'])}}" alt="">
                           </div>
 
                          

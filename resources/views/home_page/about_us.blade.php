@@ -31,7 +31,7 @@
           <div class="gallery-thumb">
             <ul class="slides">
               <li data-thumb="{{asset('img/logo-pt.jpg')}}">
-                <img src="{{asset('public/img/'.$about['img'])}}" alt="image">
+                <img src="{{asset('/storage/app/file/service/'.$about['img'])}}" alt="image">
               </li>
             </ul>
           </div><!-- /.gallery-thumb -->

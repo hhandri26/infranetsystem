@@ -24,6 +24,6 @@ class AdminMiddleware
                 return $next($request);
             }
         }
-        return view('error.404');
+        return redirect('/');
     }
 }
