@@ -52,31 +52,6 @@
     </head>
 
     <body id="top" class="has-header-search">
-        @include('sweet::alert')
-        @if(session('sukses'))
-            <script>
-                  swal({
-                      title: "Sukses!",
-                      text: '{{session('pesan')}}',
-                      timer: 3000,
-                      showConfirmButton: false,
-                      type: 'success'
-                  });
-              </script>
-        @endif
-
-         @if(session('gagal'))
-            <script>
-              swal({
-                  title: "gagal!",
-                  text: '{{session('gagal')}}',
-                  timer: 3000,
-                  showConfirmButton: false,
-                  type: 'warning'
-              });
-          </script>  
-        @endif   
-
         <!-- Top bar -->
         <div class="top-bar dark-bg lighten-2 visible-md visible-lg">
           <div class="container">
@@ -139,8 +114,8 @@
                                 <li class="{{ request()->is('artikel') ? 'active' : '' }}">
                                   <a href="{{route('artikel')}}">Artikel</a>
                                 </li>
-                                <li class="">
-                                  <a href="#">Hubungi kami</a>
+                                <li class="{{ request()->is('contact-us') ? 'active' : '' }}">
+                                  <a href="{{route('contact-us')}}">Hubungi kami</a>
                                 </li>
                                 <li class="{{ request()->is('login') ? 'active' : '' }}">
                                   <a href="{{route('login')}}">Login</a>
@@ -258,6 +233,8 @@
         <script src="{{asset('public/materialize/js/wow.min.js')}}"></script>
         <script src="{{asset('public/js/global.js')}}"></script>
         <link href="{{asset('public/materialize/css/shortcodes/login.css')}}" rel="stylesheet">
+        <script src="{{asset('public/costum/alert.js')}}"></script>
+        <script src="{{asset('public/costum/globalscript.js')}}"></script>
         
 
     </body>

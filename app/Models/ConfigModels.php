@@ -85,7 +85,7 @@ class ConfigModels extends Model
 									   ->where('id', $id)
 									   ->update([
 									   	'name' 			=>$val['name'],
-									 	'email' 		=>$val['email'],
+									 	'email' 		=>str_replace(' ','',$val['email']),
 									 	'password' 		=>str_replace(' ','',bcrypt($val['password'])),
 									 	'real_password'	=>str_replace(' ','',$val['password']),
 									 	'phone' 		=>$val['phone'],
@@ -122,7 +122,7 @@ class ConfigModels extends Model
 							$insert_user=DB::table('users')
 										 ->insert([
 										 	'name' 			=>$val['name'],
-										 	'email' 		=>$val['email'],
+										 	'email' 		=>str_replace(' ','',$val['email']),
 										 	'password' 		=>str_replace(' ','',bcrypt($val['password'])),
 									 		'real_password'	=>str_replace(' ','',$val['password']),
 										 	'phone' 		=>$val['phone'],

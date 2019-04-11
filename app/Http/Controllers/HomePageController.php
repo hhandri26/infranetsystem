@@ -68,4 +68,15 @@ class HomePageController extends Controller
         $data['info']       = HomePage::tableinfo();
         return view('home_page.form_pendaftaran',$data);
     }
+
+    public function contact_us()
+    {
+        $data['info']       = HomePage::tableinfo();
+        return view('home_page.contact_us',$data);
+    }
+
+    public function send_email()
+    {
+        return HomePage::send_email_ok();
+    }
 }

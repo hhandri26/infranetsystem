@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Models;
-
+use App\Mail\ContactPosted;
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use Mail;
 
 class HomePage extends Model
 {
@@ -102,5 +103,34 @@ class HomePage extends Model
 									->orderby('a.id')
 									->get();
 		return $json_array;
+    }
+
+    public static function send_email_ok()
+    {
+        try{
+            $data       = request()->data;
+            $json_array = json_decode($data, TRUE);
+            foreach ($json_array as $key => $val){
+                $message['name']       = $val['name'] ;
+                $message['email']      = $val['email'] ;
+                $message['phone']      = $val['phone'] ;
+                $message['subject']    = $val['subject'] ;
+                $message['message']    = $val['message'] ;
+                $info                  = HomePage::tableinfo();
+                $email                 = $info['email'];
+                Mail::to($email)->send(new ContactPosted($message));
+            }
+            if ($confirm1==1){
+                $t_array['msg_type']    ='success';
+                $t_array['msg']         ="Update data berhasil..";
+                $t_array['refresh']     =route('service1_table');
+            }
+            return $t_array;
+        }
+        catch(\Exception $e) {
+            $t_array['msg_type']='error';
+            $t_array['msg']=$e->getMessage();
+            return $t_array;
+        }
     }
 }

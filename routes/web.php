@@ -126,6 +126,8 @@ Route::group(['middleware'=>'guest'], function(){
 	Route::get('/daftar', 'HomePageController@daftar')->name('daftar');
 	Route::get('/artikel', 'HomePageController@artikel')->name('artikel');
 	Route::get('/artikel-single/{id}', 'HomePageController@article_single')->name('artikel-single');
+	Route::get('/contact-us', 'HomePageController@contact_us')->name('contact-us');
+	Route::post('/send_email', 'HomePageController@send_email')->name('send_email');
 	Route::resource('/pendaftaran', 'PendaftaranController');
 
 });
