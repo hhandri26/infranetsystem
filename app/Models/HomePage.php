@@ -123,7 +123,7 @@ class HomePage extends Model
             if ($confirm1==1){
                 $t_array['msg_type']    ='success';
                 $t_array['msg']         ="Update data berhasil..";
-                $t_array['refresh']     =route('service1_table');
+                $t_array['refresh']     =route('contact-us');
             }
             return $t_array;
         }
