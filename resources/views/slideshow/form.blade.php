@@ -88,35 +88,6 @@
     </div>
 </div>
 <script type="text/javascript">
-    $('.rcheck').iCheck({
-    checkboxClass: 'icheckbox_flat-green',
-    radioClass: 'iradio_square-green',
-    increaseArea: '20%' // optional
-  });
-    $(document).ready(function() 
-          {
-            $('#decription').summernote({
-               height: 350,            
-                    minHeight: null,        
-                    maxHeight: null,          
-                    focus: false                 
-            });
-          });
-
-    function readURL(input) { 
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#profile-pre').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    $("#profile-id").change(function(){
-        readURL(this);
-    });
-
     function SaveWarning(){
         var id          ="{{$id}}";
         var a           = {};

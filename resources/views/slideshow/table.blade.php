@@ -7,8 +7,12 @@
             <span class="fa fa-plus"></span> Tambah Slideshow
         </a>
     </div>
-    <div class="col-sm-12">
-        <h4 class="m-t-0 header-title">Table Slideshow</h4>                      
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+              <h2>Table<small>Slideshow</small></h2>
+            <div class="clearfix"></div>
+        </div>                       
         <div class="table-responsive m-b-20">
           <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                 <thead>
@@ -51,6 +55,7 @@
 
         </div>
     </div>
+  </div>
 </div>
 <script type="text/javascript">
   function edit(sid){

@@ -133,4 +133,36 @@ class HomePage extends Model
             return $t_array;
         }
     }
+
+    public static function get_catagories_training()
+    {
+        $table = DB::table('app_training_catagories')
+                 ->select('*')
+                 ->get();
+        return $table;
+    }
+
+    public static function get_single_training($id)
+    {
+        $table = DB::table('app_training_single as a')
+                 ->select('a.id','a.header_materi','a.sub_materi','a.sort','b.title as catagories','b.price')
+                 ->leftjoin('app_training_catagories as b','a.id_h','=','b.id')
+                 ->where('a.id_h',$id)
+                 ->orderby('a.sort')
+                 ->get();
+        return $table;
+
+    }
+
+    public static function get_schedule($id)
+    {
+        $table = DB::table('app_schedule_sub as a')
+                 ->select('a.id', 'a.desc','a.date','a.time','b.desc as schedule')
+                 ->leftjoin('app_schedule_training as b','a.id_h','=','b.id')
+                 ->where('b.id_h',$id)
+                 ->orderby('a.id')
+                 ->get();
+        return $table;
+
+    }
 }

@@ -119,4 +119,9 @@ class ConfigController extends Controller
 	{
 		return ConfigModels::info_update_ok();
 	}
+	// app todo list
+	public function get_todo_list()
+	{
+		return ConfigModels::get_todo_list_ok();
+	}
 }

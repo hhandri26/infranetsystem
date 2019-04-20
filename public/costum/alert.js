@@ -33,6 +33,16 @@ function Alert(salert,msg){
         )
 }
 
+function AlertRequire(sField,sName){
+    var sVal = document.getElementById(sField);
+    if(sVal.value==""|| sVal.value=="0"){
+        Alert('warning',sName+' belum di isi !');
+        return false;
+    }else{
+        return true;
+    }
+}
+
 function AlertUpload(text,url,url_upload,obj_id){
      swal({
                 title: 'Apakah Anda Yakin',

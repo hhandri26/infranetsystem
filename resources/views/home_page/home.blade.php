@@ -1,84 +1,47 @@
 @extends('home_page.index')
 @section('content')
-<section class="rev_slider_wrapper mt-xs-45">
-     <div class="rev_slider materialize-slider" >
-      <ul>
+<section class="slider-revolution-wrapper mt-xs-46">
+    <div class="tp-banner-container">
+        <div class="tp-banner">
+            <ul><!-- SLIDE  -->
+              @foreach ($slideshow['slider'] as $row )
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="500"  data-saveperformance="off" >
+                    <!-- MAIN IMAGE -->
+                    <img src="{{asset('/storage/app/file/slideshow/'.$row->img)}}"  alt="" data-lazyload="{{asset('/storage/app/file/slideshow/'.$row->img)}}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->                
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption rev-heading-intro sfb dark-text text-medium"
+                        data-x="30"
+                        data-y="200" 
+                        data-speed="600"
+                        data-start="1000"
+                        data-easing="Power3.easeInOut"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="300"
+                        style="z-index: 10;">{{$row->title}}
+                    </div>
 
-        <!-- slide 1 start -->
-        @foreach ($slideshow['slider'] as $row )
-        <li data-transition="fade" data-slotamount="default" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="{{asset('/storage/app/file/slideshow/'.$row->img)}}"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="materialize Material" data-description="">
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption rev-heading sfb dark-text text-extrabold"
+                        data-x="30"
+                        data-y="250" 
+                        data-speed="600"
+                        data-start="1200"
+                        data-easing="Power3.easeInOut"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="300"
+                        style="z-index: 10;">{{$row->description}}
+                    </div>
+                </li>
+              @endforeach
 
-            <!-- MAIN IMAGE -->
-            <img src="{{asset('/storage/app/file/slideshow/'.$row->img)}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-
-
-            <!-- LAYER NR. 1 -->
-            <div class="tp-caption NotGeneric-Title tp-resizeme"
-                data-x="['left','left','center','center']" data-hoffset="['20','20','0','0']" 
-                data-y="['center','center','top','top']" data-voffset="['-100','-100','50','50']"
-                data-fontsize="['70','60','50','45']"
-                data-lineheight="['70','60','40','40']"
-                data-width="none"
-                data-height="none"
-                data-whitespace="nowrap"
-                data-transform_idle="o:1;"
-                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:600;e:Power4.easeInOut;" 
-                data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
-                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
-                data-start="800" 
-                data-splitin="none" 
-                data-splitout="none" 
-                data-responsive_offset="on"
-                style="z-index: 5; color: #373a3d; white-space: nowrap;">{{$row->title}}
-            </div>
-
-            <!-- LAYER NR. 2 -->
-            <div class="tp-caption tp-resizeme rev-subheading"
-                data-x="['left','left','center','center']" data-hoffset="['20','20','0','0']" 
-                data-y="['center','center','top','top']" data-voffset="['0','0','140','140']"
-                data-whitespace="nowrap"
-                data-transform_idle="o:1;"
-     
-                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:600;e:Power4.easeInOut;" 
-                data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
-                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
-                data-start="1000" 
-                data-splitin="none" 
-                data-splitout="none" 
-                data-responsive_offset="on"
-                style="z-index: 6; color: #666; white-space: nowrap;">{{$row->description}}
-            </div>
-
-            <!-- LAYER NR. 3 -->
-            <div class="tp-caption tp-resizeme"
-                data-x="['left','left','center','center']" data-hoffset="['20','20','0','0']" 
-                data-y="['middle','middle','top','top']" data-voffset="['100','100','220','220']"
-                data-width="none"
-                data-height="none"
-                data-whitespace="nowrap"
-                data-transform_idle="o:1;"
-                data-style_hover="cursor:default;"
-                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:600;e:Power4.easeInOut;" 
-                data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
-                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
-                data-start="1200" 
-                data-splitin="none" 
-                data-splitout="none" 
-                data-responsive_offset="on"
-                style="z-index: 7; white-space: nowrap;">
-                <a href="#contact" class="btn btn-lg  waves-effect waves-light">Contact</a>
-            </div>
-        </li>
-        @endforeach
-
-
-        <!-- slide 1 end -->    
-      </ul>             
-     </div><!-- end revolution slider -->
-</section><!-- end of slider wrapper -->
+            </ul>
+            <div class="tp-bannertimer"></div>
+        </div>
+    </div>
+</section>
 
 <section class="section-padding">
     <div class="container">

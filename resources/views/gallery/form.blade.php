@@ -53,22 +53,7 @@
         </form>
     </div>
 </div>
-<script type="text/javascript">  
-
-    function readURL(input) { 
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#profile-pre').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    $("#profile-id").change(function(){
-        readURL(this);
-    });
-
+<script type="text/javascript"> 
     function SaveWarning(){
         var id          ="{{$id}}";
         var a           = {};

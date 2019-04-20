@@ -4,39 +4,56 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Users;
+use App\Models\PendaftaranModels;
 
 class PendaftaranController extends Controller
 {
     public function index()
     {
-    	//$provinsi      =DB::table('provinsi')->get();
-
-    	//return $provinsi;
-        return view('pendaftaran/index');
+        $data['prov']   = PendaftaranModels::get_prov();
+        $data['kursus'] = PendaftaranModels::get_kursus();
+        return view('pendaftaran/index',$data);
     }
 
-    public function store(Request $request)
+    public function getkab()
     {
-    	
-        $data = $this->validate($request,[
-            'name'      		=>'required|string|max:255',
-            'email'     		=>'required|string|email|max:255|unique:users',
-            'no_identitas'      =>'required|string|max:16|unique:users',            
-        ]);
-        
-        $post           = new Users;
-        $post->name     = $request->name;
-        $post->email    = $request->email;
-        $no_identitas 	= $request->no_identitas;
-        $post->password = bcrypt($request->password);       
-        $res 			= $post->save();
-        if ($res) 
-	        {        	
-	        	return response()->json(['success'=>true]);
-	         }
-	        
-	    return response()->json(['messages'=>$data]);
-        //return redirect()->route('users.index')->with('sukses','berhasil memasukan data');
+        return PendaftaranModels::getkab_ok();
     }
+
+    public function getkec()
+    {
+        return PendaftaranModels::getkec_ok();
+    }
+
+    public function getkel()
+    {
+        return PendaftaranModels::getkel_ok();
+    }
+
+    public function getjadwal()
+    {
+        return PendaftaranModels::getjadwal_ok();
+    }
+
+    public function register_pendaftar()
+    {
+        $data       = request()->data;
+        $json_array = json_decode($data, TRUE);
+        foreach ($json_array as $key => $val){
+            $cek_email = DB::table('users')->where('email', $val['email'])->pluck('email')->first();
+            $cek_ktp   = DB::table('users')->where('no_identitas', $val['no_identitas'])->pluck('no_identitas')->first();
+        }
+        if($cek_email){
+             $t_array['msg_type']   ='warning';
+             $t_array['msg']        ='Email Sudah terdaftar !';
+             return $t_array;
+        }elseif($cek_ktp){
+            $t_array['msg_type']   ='warning';
+            $t_array['msg']        ='No Identitas Sudah terdaftar !';
+            return $t_array;
+        }else{
+            return PendaftaranModels::register_ok();
+        }
+    }
+
 }

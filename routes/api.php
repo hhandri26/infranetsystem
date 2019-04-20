@@ -23,11 +23,16 @@ Route::group(['middleware' => ['api']], function(){
 	Route::post('/auth/signin','AuthController@signin');
 	Route::get('/users','AuthController@index');
 	Route::get('/users/{id}','AuthController@show');
-
-
 	Route::group(['middleware' => ['jwt.auth']], function(){
 		Route::get('/profile','AuthController@show');
 	});
 
 
 });
+
+// app todo list
+Route::group(['middleware' => ['api']], function(){
+	Route::get('/get_todo_list','ConfigController@get_todo_list');
+
+});
+

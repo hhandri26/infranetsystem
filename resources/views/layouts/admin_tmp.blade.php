@@ -25,18 +25,16 @@ if ($user_id==1){
     <link href="{{asset('public/gantela/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="{{asset('public/gantela/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="{{asset('public/gantela/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
     <!-- iCheck -->
-   <link href="{{asset('public/gantela/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
-
+    <link href="{{asset('public/gantela/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
+    <!-- jquery Knob -->
+    
     <!-- Custom Theme Style -->
     <link href="{{asset('public/gantela/build/css/custom.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/fab/css/jquery-fab-button.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/plugins/contextmenu/jquery.contextMenu.min.css')}}" rel="stylesheet">
     <script src="{{asset('public/fab/js/jquery-fab-button.min.js')}}"></script>
     <script src="{{asset('public/costum/global.css')}}"></script>
-
     <!-- cos -->
     <link href="{{asset('public/css/icons.css')}}" rel="stylesheet">
     <script src="{{asset('public/js/jquery-2.1.4.min.js')}}"></script>

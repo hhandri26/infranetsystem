@@ -41,14 +41,18 @@
         <link href="{{asset('public/materialize/css/skins/seo.css')}}" rel="stylesheet">
         <link href="{{asset('public/materialize/css/animate.min.css')}}" rel="stylesheet">
 
-        <!-- RS5.0 Main Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="{{asset('public/materialize/revolution/css/settings.css')}}">
-        <!-- RS5.0 Layers and Navigation Styles -->
-        <link rel="stylesheet" type="text/css" href="{{asset('public/materialize/revolution/css/layers.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('public/materialize/revolution/css/navigation.css')}}">
         <link href="{{asset('public/plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
         <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
         <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
+        
+         <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+        <link rel="stylesheet" type="text/css" href="{{asset('public/materialize/revolution-version4/css/extralayers.css')}}" media="screen">
+        <link rel="stylesheet" type="text/css" href="{{asset('public/materialize/revolution-version4/css/settings.css')}}" media="screen">
+
+        <!-- RS5.0 Layers and Navigation Styles -->
+        <!-- data table -->
+        <link href="{{asset('public/plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+      
     </head>
 
     <body id="top" class="has-header-search">
@@ -213,29 +217,61 @@
         <!-- RS5.0 Core JS Files -->
         <script src="{{asset('public/materialize/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
         <script src="{{asset('public/materialize/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
-
-        <!-- global js -->
-        
-       
-
-
-        <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems! The following part can be removed on Server for On Demand Loading) -->
-         
-        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('public/materialize/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
         <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
         <script src="{{asset('public/materialize/js/wow.min.js')}}"></script>
         <script src="{{asset('public/js/global.js')}}"></script>
-        <link href="{{asset('public/materialize/css/shortcodes/login.css')}}" rel="stylesheet">
         <script src="{{asset('public/costum/alert.js')}}"></script>
         <script src="{{asset('public/costum/globalscript.js')}}"></script>
-        
+
+        <!-- data table -->
+        <script src="{{asset('public/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+        <script src="{{asset('public/plugins/datatables/dataTables.bootstrap.js')}}"></script>
+        <script src="{{asset('public/pages/jquery.datatables.init.js')}}"></script>
+        <script type="text/javascript">
+          
+jQuery(document).ready(function() {
+
+        jQuery('.tp-banner').show().revolution({
+
+                dottedOverlay:"none",
+                delay:8000,
+                startwidth:1170,
+                startheight:600,
+                hideThumbs:200,
+                hideTimerBar:"on",
+                
+                thumbWidth:100,
+                thumbHeight:50,
+                thumbAmount:1,
+                
+                navigationType:"bullet",
+                navigationArrows:"solo",
+                navigationStyle:"preview5",
+                
+                touchenabled:"on",
+                onHoverStop:"off",
+                
+                swipe_velocity: 0.7,
+                swipe_min_touches: 1,
+                swipe_max_touches: 1,
+                drag_block_vertical: false,
+                                        
+                parallax:"mouse",
+                parallaxBgFreeze:"on",
+                parallaxLevels:[10,7,4,3,2,5,4,3,2,1],
+                                        
+                keyboardNavigation:"on",
+                
+                                                
+                shadow:0,
+                fullWidth:"on",
+                fullScreen:"off",
+
+                spinner:"spinner4"
+        });
+
+}); //ready
+        </script>
 
     </body>
   

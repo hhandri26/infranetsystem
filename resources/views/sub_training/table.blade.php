@@ -1,29 +1,32 @@
 @extends('layouts.admin_tmp')
-
 @section('content')
 <div class="row">
     <div class="pull-right">
-        <a href="{{ route('user_form')}}" class="btn btn-sm btn-success">
-            <span class="fa fa-plus"></span> Tambah Users
+        <a href="{{ route('sub_training_catagories_form')}}" class="btn btn-sm btn-success">
+            <span class="fa fa-plus"></span> Tambah Materi
         </a>
     </div>
      <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
         <div class="x_title">
-              <h2>Table<small>User</small></h2>
+              <h2>Table<small>Materi</small></h2>
             <div class="clearfix"></div>
         </div>                      
         <div class="table-responsive m-b-20">
           <table id="user" border="0" class="table table-hover1 display  table-bordered compact1" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th><div style="width: 50px">No</div></th>
-                    <th><div style="width: 200px">Nama</div></th>
-                    <th><div style="width: 200px">Username</div></th>
-                    <th><div style="width: 200px">Email</div></th>
-                    <th><div style="width: 200px">Phone</div></th>
-                    <th><div style="width: 50px">Active</div></th>
-                    <th><div style="width: 200px">Privileges</div></th>
+                    <th rowspan="2"><div style="width: 50px">No</div></th>
+                    <th rowspan="2"><div style="width: 200px">Katagori Training</div></th>
+                    <th colspan="2"><div style="width: 200px">Materi</div></th>
+                </tr>
+                <tr>
+                  <th>
+                    <div style="width: 300px">Materi</div>
+                  </th>
+                  <th>
+                    <div style="width: 300px">Sub Materi</div>
+                  </th>
                 </tr>
                 </thead>
                 <tbody></tbody>
@@ -35,8 +38,8 @@
 </div>
 <script type="text/javascript">
   $(document).ready(function() {
-  var url       ="{{ route('user_list') }}";
-  var oTable    = $('#user').DataTable( {
+  var url       ="{{ route('sub_training_catagories_list') }}";
+  var oTable    = $('#user').DataTable({
      ajax: {
         url: url,
       },              
@@ -49,7 +52,9 @@
         "sPaginationType"           : "full_numbers", 
         "aLengthMenu"               : [[5,10, 20, 50, 100, -1], [5,10, 20, 50, 100, "All"]], 
         "aaSorting"                 : [[1, "asc"]], 
-        "bAutoWidth"                : false, "iDisplayLength": 10, "bCaseInsensitive": true,   
+        "bAutoWidth"                : false,
+        "iDisplayLength"            : 5, 
+        "bCaseInsensitive"          : true,   
         "fnRowCallback"             : function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
               $('td:eq(0)', nRow).addClass( "hide" );
               $.contextMenu({
@@ -73,7 +78,6 @@
                                icon   : "delete",
                               callback: function (key, options) {
                               var sid = $(this).children(":eq(0)").text();
-                              var snm = $(this).children(":eq(2)").text();
                               deleted(sid);
                        }
                    },
@@ -86,12 +90,9 @@
      "columns": [
       { "data": "id"  },
       { "data": "id","width":"10%","render": function(data, type, row,meta) {return meta.row + meta.settings._iDisplayStart + 1 ;}},
-      { "data": "name" },
-      { "data": "username" },
-      { "data": "email" },
-      { "data": "phone" },
-      { "data": "active" },
-      { "data": "users_privileges" }
+      { "data": "judul" },
+      { "data": "materi" },
+      { "data": "sub_materi" }
       ],
     });
     

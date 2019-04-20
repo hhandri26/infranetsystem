@@ -506,4 +506,13 @@ class ConfigModels extends Model
 		    return $t_array;
 		}
 	}
+
+	// todolist
+	public static function get_todo_list_ok()
+	{
+		$data = DB::table('app_todo_list')
+		  		->select('*')
+		  		->get();
+		 return $data;
+	}
 }

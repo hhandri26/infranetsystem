@@ -115,6 +115,18 @@ Route::group(['middleware'=>'admin'], function(){
 	Route::post('/update_product_h', 'ProductController@update_product_h')->name('update_product_h');
 	
 });
+
+// Training Moduls
+Route::group(['middleware'=>'admin'], function(){
+	Route::get('/training_catagories_table', 'TrainingController@training_catagories_table')->name('training_catagories_table');
+	Route::get('/training_catagories_form', 'TrainingController@training_catagories_form')->name('training_catagories_form');
+	Route::post('/training_catagories_save', 'TrainingController@training_catagories_save')->name('training_catagories_save');
+	Route::get('/training_catagories_edit', 'TrainingController@training_catagories_edit')->name('training_catagories_edit');
+// Sub Training
+ 	Route::get('/sub_training_catagories_table', 'TrainingController@sub_training_catagories_table')->name('sub_training_catagories_table');
+ 	Route::get('/sub_training_catagories_list', 'TrainingController@sub_training_catagories_list')->name('sub_training_catagories_list');
+ 	Route::get('/sub_training_catagories_form', 'TrainingController@sub_training_catagories_form')->name('sub_training_catagories_form');
+});
 // home Page
 
 Route::group(['middleware'=>'guest'], function(){
@@ -122,12 +134,21 @@ Route::group(['middleware'=>'guest'], function(){
 	Route::get('/tentang-kami', 'HomePageController@about_us')->name('tentang-kami');
 	Route::get('/produk', 'HomePageController@produk')->name('produk');
 	Route::get('/pelatihan', 'HomePageController@pelatihan')->name('pelatihan');
-	Route::get('/detial-pelatihan', 'HomePageController@detial_pelatihan')->name('detial-pelatihan');
-	Route::get('/daftar', 'HomePageController@daftar')->name('daftar');
+	Route::get('/detial-pelatihan/{id}', 'HomePageController@detial_pelatihan')->name('detial-pelatihan');
 	Route::get('/artikel', 'HomePageController@artikel')->name('artikel');
 	Route::get('/artikel-single/{id}', 'HomePageController@article_single')->name('artikel-single');
 	Route::get('/contact-us', 'HomePageController@contact_us')->name('contact-us');
 	Route::post('/send_email', 'HomePageController@send_email')->name('send_email');
-	Route::resource('/pendaftaran', 'PendaftaranController');
 
+});
+
+// pendaftaran
+Route::group(['middleware'=>'guest'], function(){
+	Route::get('/daftar', 'PendaftaranController@index')->name('daftar');
+	Route::get('/getkab', 'PendaftaranController@getkab')->name('getkab');
+	Route::get('/getkec', 'PendaftaranController@getkec')->name('getkec');
+	Route::get('/getkel', 'PendaftaranController@getkel')->name('getkel');
+	Route::get('/getjadwal', 'PendaftaranController@getjadwal')->name('getjadwal');
+	Route::post('/register_pendaftar', 'PendaftaranController@register_pendaftar')->name('register_pendaftar');
+	Route::post('/upload_file_user', 'ConfigController@upload_file')->name('upload_file_user');
 });
